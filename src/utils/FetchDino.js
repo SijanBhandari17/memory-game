@@ -8,10 +8,14 @@ import StegosaurusSrc from '../assets/Stegosaurus.jpg';
 import StyracosaurusSrc from '../assets/Styracosaurus.jpg';
 import TriceratopsSrc from '../assets/Triceratops.jpg';
 import TyrannosaurusSrc from '../assets/Tyrannosaurus.jpg';
-import Parasaurolophus from '../assets/Parasaurolophus.jpg';
+import ParasaurolophusSrc from '../assets/Parasaurolophus.jpg';
+import CarnotaurusSrc from '../assets/Carnotaurus.jpeg';
+import PterodactlySrc from '../assets/Pterodactly.jpg';
+import VelociraptorSrc from '../assets/VelociRaptor.jpeg';
+import PiloSaurusSrc from '../assets/Pliosaurus.jpg';
 
 const DinoArr = [
-  { id: 1, name: 'Parasaurolophus', imgSrc: Parasaurolophus },
+  { id: 1, name: 'Parasaurolophus', imgSrc: ParasaurolophusSrc },
   { id: 2, name: 'Ankylosaurus', imgSrc: Ankylosaurus1Src },
   { id: 3, name: 'Archaeopteryx', imgSrc: ArchaeopteryxSrc },
   { id: 4, name: 'Brachiosaurus', imgSrc: BrachiosaurusSrc },
@@ -21,6 +25,11 @@ const DinoArr = [
   { id: 8, name: 'Styracosaurus', imgSrc: StyracosaurusSrc },
   { id: 9, name: 'Triceratops', imgSrc: TriceratopsSrc },
   { id: 10, name: 'Tyrannosaurus', imgSrc: TyrannosaurusSrc },
+  { id: 11, name: 'Carnotaurus', imgSrc: CarnotaurusSrc },
+  { id: 12, name: 'Allosarus', imgSrc: AllosaurusSrc },
+  { id: 13, name: 'Pterodactly', imgSrc: PterodactlySrc },
+  { id: 14, name: 'Velociraptor', imgSrc: VelociraptorSrc },
+  { id: 15, name: 'PiloSaurus', imgSrc: PiloSaurusSrc },
 ];
 
 export default DinoArr;

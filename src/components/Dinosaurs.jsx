@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import handleRestart from '../utils/handleRestart';
 import DinoArr from '../utils/FetchDino';
+import PropTypes from 'prop-types';
 
 function shuffleCards(cards) {
   const shuffled = [...cards];
@@ -17,7 +18,7 @@ function Dinosaurs() {
   const [clickedItems, setClickedItems] = useState([]);
 
   function handleClickonCards(id) {
-    const didIwin = count == 10;
+    const didIwin = count == DinoArr.length;
     if (clickedItems.includes(id) || didIwin) {
       handleRestart(setCount, setClickedItems, didIwin);
       setCards(shuffleCards(cards));
@@ -33,9 +34,9 @@ function Dinosaurs() {
   }, []);
 
   return (
-    <div className="flex max-h-screen flex-col bg-[#191c29]">
+    <div className="flex h-full flex-col bg-[#191c29]">
       <Header count={count} />
-      <div className="cards-container grid h-screen w-screen grid-cols-5 gap-4 p-4">
+      <div className="cards-container grid w-screen grid-cols-5 gap-4 p-4">
         {cards.map((item, index) => {
           return (
             <IndividualCards
@@ -56,7 +57,7 @@ function IndividualCards({ handleClick, id, imgsrc, name }) {
   return (
     <div
       onClick={() => handleClick(id)}
-      className="individual-cards flex h-[250px] w-[1/5] cursor-pointer flex-col justify-between rounded-2xl border border-black bg-[#2a2d3a] p-2 duration-300 ease-in-out hover:scale-[1.05] hover:transition-transform"
+      className="individual-cards flex h-[250px] cursor-pointer flex-col justify-between rounded-2xl border border-black bg-[#2a2d3a] p-2 duration-300 ease-in-out hover:scale-[1.05] hover:transition-transform"
     >
       <div className="flex h-40 w-full items-center justify-center rounded-2xl bg-gray-100">
         <img src={imgsrc} className="max-h-9/10 max-w-full object-cover" />
@@ -65,6 +66,13 @@ function IndividualCards({ handleClick, id, imgsrc, name }) {
     </div>
   );
 }
+
+IndividualCards.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  id: PropTypes.number,
+  imgsrc: PropTypes.string,
+  name: PropTypes.string.isRequired,
+};
 
 function Header({ count }) {
   const initialCount = useRef(0);
